@@ -14,8 +14,14 @@ app.use(bodyParser.json());
 //importando rotas do usuário
 const userRoutes = require('./routes/userRoutes');
 
+//importando task
+const taskRoutes = require('./routes/taskRoutes');
+
+
 //padronizão do caminho do usuário
 app.use('/api/users', userRoutes);
+app.use('/api/tasks', taskRoutes); // caminho task
+
 
 //porta que vai rodar
 const PORT = 3000;

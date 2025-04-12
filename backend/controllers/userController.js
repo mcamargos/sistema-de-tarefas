@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');     //criptografar a senha
 const jwt = require('jsonwebtoken');    //gerar o token
 require('dotenv').config();             //acessar o SECRET_KEY do .env
 
+//modelo usuário
 exports.register = async (req, res) => {
     try {
       const { name, email, password, role } = req.body;
@@ -27,7 +28,7 @@ exports.register = async (req, res) => {
     }
   };
   
-
+//modelo login 
 exports.login = async (req, res) => {
     try {
       const { email, password } = req.body;
