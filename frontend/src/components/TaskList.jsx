@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 
-function TaskList() {
+function TaskList({ recarregar }) {
   const [tarefas, setTarefas] = useState([]);
   const [mensagem, setMensagem] = useState("");
 
@@ -19,7 +19,7 @@ function TaskList() {
 
   useEffect(() => {
     buscarTarefas();
-  }, []);
+  }, [recarregar]);
 
   const concluirTarefa = async (id) => {
     try {
@@ -78,7 +78,7 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     border: "1px solid #ffffff",
-  },  
+  },
   prioridade: {
     fontWeight: "bold",
     textTransform: "capitalize",

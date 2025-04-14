@@ -7,6 +7,7 @@ import EditProfile from "../components/EditProfile";
 function Dashboard() {
   const [mostrarEditar, setMostrarEditar] = useState(false);
   const [user, setUser] = useState(null);
+  const [recarregar, setRecarregar] = useState(false);
 
   useEffect(() => {
     const userStorage = JSON.parse(localStorage.getItem("user"));
@@ -22,14 +23,18 @@ function Dashboard() {
     window.location.href = "/admin";
   };
 
+  const buscarTarefas = () => {
+    setRecarregar((prev) => !prev); // força recarregamento no TaskList
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.header}>
         <h1 style={styles.title}>Painel de Tarefas - Blue Ocean</h1>
-        <div style={styles.actions}>
+        <div>
           {user?.role === "master" && (
             <button
-              style={{ ...styles.editButton, background: "#6c63ff" }}
+              style={{ ...styles.editButton, background: "#6c63ff", marginRight: "10px" }}
               onClick={irParaAdmin}
             >
               Painel Admin
@@ -42,18 +47,18 @@ function Dashboard() {
         </div>
       </div>
 
+      <div style={styles.wrapper}>
+        <ProfileCard />
+        <NewTaskForm onTaskCreated={buscarTarefas} />
+      </div>
+
+      <TaskList recarregar={recarregar} />
+
       {mostrarEditar && (
         <div style={styles.editarWrapper}>
           <EditProfile />
         </div>
       )}
-
-      <div style={styles.wrapper}>
-        <ProfileCard />
-        <NewTaskForm />
-      </div>
-
-      <TaskList />
     </div>
   );
 }
@@ -74,10 +79,6 @@ const styles = {
   title: {
     marginBottom: "10px",
   },
-  actions: {
-    display: "flex",
-    gap: "10px",
-  },
   wrapper: {
     display: "flex",
     justifyContent: "space-between",
@@ -91,6 +92,7 @@ const styles = {
     padding: "10px 15px",
     borderRadius: "6px",
     cursor: "pointer",
+    marginLeft: "10px",
   },
   editButton: {
     background: "#007bff",
@@ -101,7 +103,11 @@ const styles = {
     cursor: "pointer",
   },
   editarWrapper: {
-    marginBottom: "30px",
+    position: "absolute",
+    top: "100px",
+    right: "40px",
+    width: "300px",
+    zIndex: 10,
   },
 };
 

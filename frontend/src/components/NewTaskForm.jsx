@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../services/api";
 
-function NewTaskForm() {
+function NewTaskForm({ onTaskCreated }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -28,6 +28,10 @@ function NewTaskForm() {
       setDescription("");
       setDueDate("");
       setPriority("baixa");
+
+      if (onTaskCreated) {
+        onTaskCreated(); // chama função do pai para recarregar tarefas
+      }
     } catch (err) {
       setMensagem("Erro ao criar tarefa.");
     }
@@ -82,7 +86,7 @@ const styles = {
     background: "#f8f8f8",
     borderRadius: "8px",
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-    border: "1px solid #ffffff", // borda azul
+    border: "1px solid #007bff",
   },
   input: {
     padding: "10px",
