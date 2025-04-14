@@ -92,8 +92,6 @@ Rotas úteis:
 - `POST /api/users/register`
 - `POST /api/users/login`
 - `GET /api/users/profile/:id`
-- `PUT /api/users/update/:id`
-- `PATCH /api/users/picture/:id`
 - `POST /api/tasks/create`
 - `PATCH /api/tasks/complete/:taskId`
 - `PATCH /api/tasks/admin/aprovar/:taskId`
