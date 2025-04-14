@@ -44,7 +44,7 @@
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/task-gamify.git
+git clone https://github.com/mcamargos/task-gamify.git
 cd task-gamify
 ```
 
