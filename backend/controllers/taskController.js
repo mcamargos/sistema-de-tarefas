@@ -44,11 +44,11 @@ exports.completeTask = async (req, res) => {
 
     const task = await Task.findByPk(taskId);  //busca a tarefa pelo id
 
-    if (!task || task.status === "Concluida" || task.status === "Aprovada") {     //verifica se a task existe e nao finalizou
+    if (!task || task.status === "concluida" || task.status === "aprovada") {     //verifica se a task existe e nao finalizou
       return res.status(400).json({ error: "Tarefa inválida ou já finalizada." });
     }
 
-    task.status = "Concluida";  //atualiza o status
+    task.status = "concluida";  //atualiza o status
     await task.save();
 
     res.status(200).json({ message: "Tarefa marcada como concluída. Aguarde a aprovação." });
@@ -99,7 +99,7 @@ exports.aprovarTarefa = async (req, res) => {
 
     await user.save();
 
-    task.status = "Aprovada";    //atualiza o status para aprovada
+    task.status = "aprovada";    //atualiza o status para aprovada
     await task.save();
 
     res.status(200).json({          //retorna os dados atualizados

@@ -15,12 +15,12 @@ const Task = sequelize.define('Task', {           //define o modelo da task
     allowNull: false
   },
   priority: {
-    type: DataTypes.ENUM('Baixa', 'Media', 'Alta'),   //prioridade da task
+    type: DataTypes.ENUM('baixa', 'media', 'alta'),   //prioridade da task
     allowNull: false
   },
   status: {
-    type: DataTypes.ENUM('Pendente', 'Concluida', 'Atrasada'),   //status da task
-    defaultValue: 'Pendente'
+    type: DataTypes.ENUM('pendente', 'concluida', 'atrasada'),   //status da task
+    defaultValue: 'pendente'
   }
 });
 
