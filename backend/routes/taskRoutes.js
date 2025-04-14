@@ -1,14 +1,29 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const taskController = require('../controllers/taskController');
+const taskController = require("../controllers/taskController");
 
-//criar task 
-router.post('/create', taskController.createTask);
+//rotas dos user comuns 
 
-//lista de tasks por user
-router.get('/list/:userId', taskController.listTasksByStatus);
+//cria a nova task
+router.post("/create", taskController.createTask);
 
-//concluir tarefa
-router.patch('/complete/:taskId', taskController.completeTask);
+//listagem de task por id
+router.get("/list/:userId", taskController.listTasksByUser);
+
+//marcar como concluida
+router.patch("/complete/:taskId", taskController.completeTask);
+
+
+//rotas do adm
+
+//ver todas as tasks
+router.get("/admin/all", taskController.listAllTasks);
+
+//aprovar task
+router.patch("/admin/aprovar/:taskId", taskController.aprovarTarefa);
+
+//ver ranking
+router.get("/admin/ranking", taskController.getRanking);
 
 module.exports = router;
+

@@ -1,33 +1,33 @@
-const { DataTypes } = require('sequelize'); //str, int...
+const { DataTypes } = require('sequelize'); //string, int...
 const sequelize = require('../db/database'); //conexão db 
 
 // modelo usuário 
 const User = sequelize.define('User', {
   name: {
     type: DataTypes.STRING,
-    allowNull: false // nome é obrigatório
+    allowNull: false         // nome obrigatório
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true // o email não pode se repetir
+    unique: true            // o email não pode ser repetido
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false // senha é obrigatória
+    allowNull: false        // senha obrigatória
   },
   role: {
     type: DataTypes.STRING,
-    defaultValue: 'user' // pode ser user ou master (adm)
+    defaultValue: 'user'    // pode ser user ou master (adm)
   },
   points: {
     type: DataTypes.INTEGER,
-    defaultValue: 0 // começa com 0 pontos
+    defaultValue: 0        // começo com 0 pontos
   },
   level: {
     type: DataTypes.INTEGER,
-    defaultValue: 1 // começa no nível 1
-  }
+    defaultValue: 1       // começo no nível 1
+  },
 });
 
 module.exports = User;

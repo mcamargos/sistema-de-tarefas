@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize'); //importação da biblioteca e Carregamento de variáveis
+const { Sequelize } = require('sequelize'); //importação da biblioteca e carregamento de variáveis
 
 //conexão com db 
 const sequelize = new Sequelize({

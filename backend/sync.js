@@ -1,9 +1,7 @@
-const sequelize = require('./db/database'); //conexão com o db
-const User = require('./models/User'); // importando modelo usuário
-const Task = require('./models/Task'); // model de task
+const sequelize = require('./db/database');
+const { User, Task } = require('./models'); //importa os modelos com relacionamento
 
-// criar as tabelas conforme o modelo 
-sequelize.sync({ force: false })
+sequelize.sync({ force: true }) //recriação das tabelas 
   .then(() => {
     console.log('Banco de dados sincronizado, tudo certo!');
   })

@@ -1,11 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const userController = require('../controllers/userController');
+const userController = require("../controllers/userController");
 
-//guia para cadastro
-router.post('/register', userController.register);
+//registro do user
+router.post("/register", userController.register);
 
-//guia para login
-router.post('/login', userController.login);
+//login
+router.post("/login", userController.login);
+
+//visualizar perfil
+router.get("/profile/:userId", userController.getProfile);
+
+//atualizar dados 
+router.put("/update/:id", userController.updateUser);
 
 module.exports = router;

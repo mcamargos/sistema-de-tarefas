@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffff, #10579b);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
