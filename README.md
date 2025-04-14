@@ -44,8 +44,8 @@
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/mcamargos/task-gamify.git
-cd task-gamify
+git clone https://github.com/mcamargos/sistema-de-tarefas.git
+cd sistema-de-tarefas
 ```
 
 ### 2. Instale as dependências do backend
