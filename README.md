@@ -124,15 +124,6 @@ SECRET_KEY=minhaChaveSuperSecreta123
 ![Login](https://github.com/user-attachments/assets/075b19ab-8466-4ed4-86fd-b4238729ead8)
 
 
-
-
----
-
-## ❌ O que ficou faltando
-
-- [ ] Adicionar ou alterar foto de perfil.
-- [ ] Testes automatizados (Manuais apenas)
-
 ---
 
 ## 📆 Histórico de Desenvolvimento
@@ -151,4 +142,4 @@ SECRET_KEY=minhaChaveSuperSecreta123
 ## 👨‍💻 Desenvolvido por
 
 **Matheus Camargos**  
-Desafio BlueOcean - Sistema de Tarefas com Gamificação  
+Sistema de Tarefas com Gamificação  
